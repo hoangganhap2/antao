@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Apple(weight) {
+        this.weight=weight;
+
+        this.getWeight=function () {
+            return this.weight;
+        };
+        this.decreaseApple=function () {
+            if(this.weight>0){
+                this.weight --;
+            }
+        };
+        this.isEmpty=function () {
+            if(this.weight>0){
+                return true;
+            }else {
+                return false;
+            }
+            }
+    }
+    function Human(name,gender,weight) {
+        this.name=name;
+        this.gender=gender;
+        this.weight=weight;
+        this.voice=function () {
+            console.log("Hello các con cháu của ta :)) ")
+        };
+
+        this.getName=function () {
+            return this.name;
+        };
+        this.setName=function (newName) {
+            this.name=newName;
+        };
+        this.getWeight=function () {
+            return this.weight;
+        };
+        this.setWeight=function (newWeight) {
+            this.weight=newWeight;
+        };
+        this.isMale=function () {
+            return true;
+        };
+        this.setGender=function (newGender) {
+            this.gender=newGender;
+        };
+        this.checkApple=function (apple) {
+                return apple.weight;
+
+        };
+        this.eatApple=function (apple) {
+            if(apple.isEmpty()){
+                this.weight++;
+                apple.decreaseApple();
+            }
+            // alert("Táo giảm còn: "+apple.weight);
+            // alert("Adam tăng lên: "+human1.weight);
+            // alert("Eva tăng lên: "+human2.weight);
+        }
+
+    }
+    let apple1=new Apple(10);
+    let human1=new Human("Adam",true,60);
+    let human2=new Human("Eva",false,50);
+    human1.eatApple(apple1);
+    human2.eatApple(apple1)
+
+</script>
+
+</html>
